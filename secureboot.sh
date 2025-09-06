@@ -1,4 +1,5 @@
 #!/bin/bash
+# Code by Sergio00166
 set -e
 
 ESP_MOUNTPOINT=""
@@ -25,11 +26,13 @@ usage() {
 enroll_keys() {
   echo "==> Checking Secure Boot keys enrollment..."
   if ! sbctl list-keys | grep -q "Platform Key (PK)"; then
-    echo "Keys not enrolled. Enrolling now..."
+    echo "Keys not enrolled. Creating and enrolling now..."
+    sudo sbctl create-keys
     if ! sudo sbctl enroll-keys --microsoft; then
       echo "Error: Failed to enroll Secure Boot keys. Aborting."
       exit 1
     fi
+    echo "Keys created and enrolled successfully."
   else
     echo "Keys already enrolled."
   fi
@@ -133,3 +136,4 @@ fi
 
 echo "==> Requested steps completed."
 
+ 
