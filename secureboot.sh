@@ -5,7 +5,7 @@ set -e
 ESP_MOUNTPOINT=""
 BOOTLOADER_ID=""
 TARGET="x86_64-efi"
-GRUB_MODULES="normal test efi_gop efi_uga search echo linux all_video gfxmenu gfxterm_background gfxterm loadenv configfile tpm fat ext2"
+GRUB_MODULES="normal search echo linux all_video gfxmenu gfxterm_background gfxterm loadenv configfile tpm fat ext2"
 PACMAN_HOOK_PATH="/etc/pacman.d/hooks/sbctl-sign-kernel.hook"
 
 usage() {
