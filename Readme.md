@@ -52,7 +52,3 @@ This repository provides a Bash script to simplify installing GRUB on UEFI syste
 * If keys already exist, `sbctl create-keys` may print a warning, which is harmless.
 * After running all steps successfully, you should be able to reboot with Secure Boot enabled.
 
-## License
-
-GNU License
-
